@@ -1,0 +1,235 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.nav {
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nav-link {
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff0000, #00ff00);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-button {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #555;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  background-color: #f5f5f5;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  background-color: #ff6c00;
+  color: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link.active {
+  background-color: #ff6c00;
+  color: #fff;
+}
+
+select option {
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: #555;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+select option:hover {
+  background-color: #eee;
+}
+
+select option:checked {
+  background-color: #007bff;
+  color: #fff;
+}
+
+select option:disabled {
+  background-color: #ccc;
+  color: #555;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-container {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  transition: opacity 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-container thead {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+input[type="date"]::-webkit-calendar-container tbody td {
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-container tbody td.today {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+input[type="date"]::-webkit-calendar-container tbody td[selected] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+input[type="date"]::-webkit-calendar-container tbody td:hover:not(.today) {
+  background-color: #f1f1f1;
+}
+
+.btn:hover,
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+  transform: rotate(180deg) scale(1.1);
+}
+
+input[type="date"]:focus::-webkit-calendar-container {
+  opacity: 0.9;
+}
