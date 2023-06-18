@@ -14,6 +14,7 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, string>
 
     public DbSet<Book> Books { get; set; }
     public DbSet<PurchaseHistory> PurchaseHistories { get; set; }
+    public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

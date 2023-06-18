@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
       const _user: User = await getSelf();
       const role: string[] = await getSelfRole();
       const _role: string = role[0];
-      dispatch(setUser({role: _role, ..._user}));
+      dispatch(setUser({role: _role, user: _user}));
       navigate('/', { replace: true });
     } catch (error) {
       setErrorMessage('Ошибка входа. Проверьте правильность введенных данных.');

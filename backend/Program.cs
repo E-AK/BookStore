@@ -1,7 +1,6 @@
 using System.Text;
 using backend.Data;
 using backend.Models;
-using backend.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

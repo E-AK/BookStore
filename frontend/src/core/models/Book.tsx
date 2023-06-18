@@ -1,10 +1,10 @@
 export default interface Book {
-    Id: number;
-    Preview: string;
-    Title: string;
-    Author: string;
-    Description: string;
-    Price: number;
-    Genre: string
+    id: number;
+    preview: File | null;
+    title: string;
+    author: string;
+    description: string;
+    price: number;
+    genre: string
 }
   

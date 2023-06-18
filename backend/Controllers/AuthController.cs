@@ -214,4 +214,49 @@ public class AuthController : ControllerBase
             return StatusCode(500, "Произошла ошибка при обновлении данных пользователя");
         }
     }
+
+    [HttpGet("users")]
+    [Authorize(Roles = "Admin")]
+    public IActionResult GetUsers()
+    {
+        try
+        {
+            var users = _userManager.Users.ToList();
+            return Ok(users);
+        }
+        catch (Exception ex)
+        {
+            // Обработка ошибки
+            return StatusCode(500, "Произошла ошибка при получении пользователей");
+        }
+    }
+
+    [HttpDelete("users/{userId}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteUser(string userId)
+    {
+        try
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.DeleteAsync(user);
+
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+
+            return BadRequest(result.Errors);
+        }
+        catch (Exception ex)
+        {
+            // Обработка ошибки
+            return StatusCode(500, "Произошла ошибка при удалении пользователя");
+        }
+    }
 }

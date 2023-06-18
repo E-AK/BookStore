@@ -64,7 +64,7 @@ const ProfilePage: React.FC = () => {
       const _user: User = await getSelf();
       const role: string[] = await getSelfRole();
       const _role: string = role[0];
-      dispatch(setUser({role: _role, ..._user}));
+      dispatch(setUser({role: _role, user: _user}));
     }
     catch(error) {
       setError('Ошибка: ' + error);
@@ -87,7 +87,7 @@ const ProfilePage: React.FC = () => {
       const response: PurchaseHistory[] = await getUserPurchaseHistory();
       setPurchaseHistory(response);
 
-      const ids: number[] = response.map(item => item.ProductId); // Исправлено: Используем ProductId вместо Id
+      const ids: number[] = response.map(item => item.productId); // Исправлено: Используем ProductId вместо Id
       if  (ids.length > 0) {
         const books: Book[] = await getBooksbyIds(ids);
         setBooks(books);
@@ -102,13 +102,13 @@ const ProfilePage: React.FC = () => {
 
     if (user) {
       setFormValues({
-        fullName: user.FullName || '',
-        dateOfBirth: user.DateOfBirth || '',
-        gender: user.Gender || '',
-        email: user.Email || '',
-        phoneNumber: user.PhoneNumber || '',
-        postalCode: user.PostalCode || '',
-        address: user.Address || '',
+        fullName: user.fullName || '',
+        dateOfBirth: user.dateOfBirth || '',
+        gender: user.gender || '',
+        email: user.email || '',
+        phoneNumber: user.phoneNumber || '',
+        postalCode: user.postalCode || '',
+        address: user.address || '',
         currentPassword: '',
         newPassword: '',
         confirmPassword: ''
@@ -289,17 +289,17 @@ const ProfilePage: React.FC = () => {
             </thead>
             <tbody>
               {purchaseHistory ? purchaseHistory.map((purchase) => {
-                const book = books ? books.find((b) => b.Id === purchase.ProductId) : null;
+                const book = books ? books.find((b) => b.id === purchase.productId) : null;
                 if (book) {
                   return (
-                    <tr key={purchase.Id}>
-                      <td>{purchase.Id}</td>
-                      <td>{purchase.Timestamp.toString()}</td>
-                      <td>{book.Title}</td>
-                      <td>{book.Author}</td>
-                      <td>{book.Description}</td>
-                      <td>{book.Price}</td>
-                      <td>{book.Genre}</td>
+                    <tr key={purchase.id}>
+                      <td>{purchase.id}</td>
+                      <td>{purchase.timestamp.toString()}</td>
+                      <td>{book.title}</td>
+                      <td>{book.author}</td>
+                      <td>{book.description}</td>
+                      <td>{book.price}</td>
+                      <td>{book.genre}</td>
                     </tr>
                   );
                 }

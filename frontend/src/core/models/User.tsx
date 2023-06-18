@@ -1,11 +1,11 @@
 export default interface User {
-  Id: string;
-  Role: string;
-  FullName: string;
-  DateOfBirth: string;
-  Gender: string;
-  PostalCode: string | null;
-  Address: string | null;
-  Email: string;
-  PhoneNumber: string | null;
+  id: string;
+  role: string;
+  fullName: string;
+  dateOfBirth: string;
+  gender: string;
+  postalCode: string | null;
+  address: string | null;
+  email: string;
+  phoneNumber: string | null;
 }

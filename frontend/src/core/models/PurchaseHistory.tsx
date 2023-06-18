@@ -1,6 +1,6 @@
 export interface PurchaseHistory {
-    Id: number;
-    UserId: number;
-    ProductId: number;
-    Timestamp: Date;
+    id: number;
+    userId: number;
+    productId: number;
+    timestamp: Date;
 }
